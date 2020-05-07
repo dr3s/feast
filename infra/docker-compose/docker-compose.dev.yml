@@ -16,13 +16,10 @@ services:
       - kafka
     ports:
       - 6565:6565
-
     working_dir: /code
-    command:
-      - mvn
-      - -pl
-      - core
-      - spring-boot:run
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
 
   jupyter:
     image: jupyter/minimal-notebook:619e9cc2fc07
